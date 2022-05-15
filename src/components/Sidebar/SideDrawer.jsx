@@ -10,7 +10,7 @@ import Toolbar from '@mui/material/Toolbar'
 import Typography from '@mui/material/Typography'
 import { useTheme } from '@mui/material/styles'
 import { useNavigate } from "react-router";
-import '../../Assets/SideDrawer.css'
+// import '../../Assets/SideDrawer.css'
 import NarrowDrawer from './NarrowDrawer'
 import ChevronRightIcon from '@mui/icons-material/ChevronRight';
 import ChevronLeftIcon from '@mui/icons-material/ChevronLeft';
@@ -19,6 +19,34 @@ import { Grid } from '@mui/material'
 
 const drawerWidth = 240;
 const narrowDrawerWidth = 60;
+
+const MuiPaper_root_MuiDrawer_paper = {
+
+    display: { xs: 'none', sm: 'block' },
+    '& .MuiDrawer-paper': {
+        boxSizing: 'border-box', backgroundColor: '#222430', color: ' #b0785e',
+        width: narrowDrawerWidth, margin: '10px', borderRadius: '10px'
+    },
+    '& .css-12i7wg6-MuiPaper-root-MuiDrawer-paper': {
+        border: '2px solid #b0785e5c !important',
+        height: '97% !important',
+    }
+}
+
+const MuiPaper_root_MuiDrawer_paper2 = {
+
+    display: { xs: 'none', sm: 'block' },
+    '& .MuiDrawer-paper': {
+        boxSizing: 'border-box',
+        width: drawerWidth, margin: '10px', borderRadius: '10px', backgroundColor: '#222430', color: ' #b0785e'
+    },
+    '& .css-12i7wg6-MuiPaper-root-MuiDrawer-paper': {
+        border: '2px solid #b0785e5c !important',
+        height: '97% !important',
+    }
+}
+
+
 
 function ResponsiveDrawer(props) {
     let navigate = useNavigate()
@@ -62,7 +90,6 @@ function ResponsiveDrawer(props) {
 
     return (
         <Box sx={{ display: 'flex' }}>
-
             <CssBaseline />
             <AppBar
                 position="fixed"
@@ -108,13 +135,7 @@ function ResponsiveDrawer(props) {
                     openDrawer ? <Drawer
                         variant="permanent"
                         className='borderSidebar'
-                        sx={{
-                            display: { xs: 'none', sm: 'block' },
-                            '& .MuiDrawer-paper': {
-                                boxSizing: 'border-box', backgroundColor: '#222430', color: ' #b0785e',
-                                width: narrowDrawerWidth, margin: '10px', borderRadius: '10px'
-                            },
-                        }}
+                        sx={MuiPaper_root_MuiDrawer_paper}
                         open
                     >
                         <Grid onClick={() => setOpenDrawer(!openDrawer)} sx={{ display: 'flex', justifyContent: 'center', padding: '20%', cursor: 'pointer' }}>
@@ -124,13 +145,7 @@ function ResponsiveDrawer(props) {
                     </Drawer> : <Drawer
                         variant="permanent"
                         className='borderSidebar'
-                        sx={{
-                            display: { xs: 'none', sm: 'block' },
-                            '& .MuiDrawer-paper': {
-                                boxSizing: 'border-box',
-                                width: drawerWidth, margin: '10px', borderRadius: '10px', backgroundColor: '#222430', color: ' #b0785e'
-                            },
-                        }}
+                        sx={MuiPaper_root_MuiDrawer_paper2}
                         open
                     >
                         <Grid onClick={() => setOpenDrawer(!openDrawer)} sx={{ display: 'flex', justifyContent: 'flex-start', alignItems: 'center', padding: '2% 4%', cursor: 'pointer' }}>
