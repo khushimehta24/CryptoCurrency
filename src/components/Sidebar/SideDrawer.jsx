@@ -93,10 +93,10 @@ function ResponsiveDrawer(props) {
             <CssBaseline />
             <AppBar
                 position="fixed"
-                sx={{ flexGrow: 1, display: { md: 'none', sm: 'none', xs: 'flex' }, backgroundColor: 'black', width: { xs: `100%` }, backgroundColor: '#F5F6F8', boxShadow: 'none', color: 'black' }}
+                sx={{ flexGrow: 1, display: { md: 'none', sm: 'none', xs: 'flex' }, backgroundColor: '#222430', width: { xs: `100%` }, backgroundColor: '#F5F6F8', boxShadow: 'none', color: 'black' }}
 
             >
-                <Toolbar sx={{ display: { md: 'none', sm: 'none', xs: 'flex' }, backgroundColor: 'black', color: ' #b0785e' }}>
+                <Toolbar sx={{ display: { md: 'none', sm: 'none', xs: 'flex' }, backgroundColor: '#222430', color: ' #b0785e' }}>
                     <IconButton
                         color="inherit"
                         aria-label="open drawer"
@@ -125,7 +125,7 @@ function ResponsiveDrawer(props) {
                         display: { xs: 'block', sm: 'none' },
                         '& .MuiDrawer-paper': {
                             boxSizing: 'border-box',
-                            width: drawerWidth, backgroundColor: 'black', color: ' #b0785e'
+                            width: drawerWidth, backgroundColor: '#222430', color: ' #b0785e'
                         },
                     }}
                 >
