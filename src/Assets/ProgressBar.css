@@ -1,0 +1,17 @@
+.CircularProgressbar-text{
+    font-size: 14px !important;
+    fill: #B0785E !important;
+}
+
+.CircularProgressbar .CircularProgressbar-path{
+    stroke: #B0785E  !important;
+}
+
+.CircularProgressbar{
+    width:100% !important;
+    height: 100px !important;
+}
+
+.css-ftc7wc-MuiDivider-root {
+    border-color: rgba(255, 255, 255, 0.359) !important;
+}

@@ -1,0 +1,7 @@
+.css-19mk8g1-MuiInputBase-root-MuiFilledInput-root:after {
+    border-bottom: 2px solid #ffffff !important;
+}
+
+.css-o943dk-MuiFormLabel-root-MuiInputLabel-root.Mui-focused{
+    color: rgb(0, 0, 0) !important;
+}
