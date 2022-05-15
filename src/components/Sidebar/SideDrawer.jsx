@@ -27,7 +27,7 @@ const MuiPaper_root_MuiDrawer_paper = {
         boxSizing: 'border-box', backgroundColor: '#222430', color: ' #b0785e',
         width: narrowDrawerWidth, margin: '10px', borderRadius: '10px'
     },
-    '& .css-12i7wg6-MuiPaper-root-MuiDrawer-paper': {
+    '& .MuiPaper-root': {
         border: '2px solid #b0785e5c !important',
         height: '97% !important',
     }
@@ -40,7 +40,7 @@ const MuiPaper_root_MuiDrawer_paper2 = {
         boxSizing: 'border-box',
         width: drawerWidth, margin: '10px', borderRadius: '10px', backgroundColor: '#222430', color: ' #b0785e'
     },
-    '& .css-12i7wg6-MuiPaper-root-MuiDrawer-paper': {
+    '& .MuiPaper-root': {
         border: '2px solid #b0785e5c !important',
         height: '97% !important',
     }
