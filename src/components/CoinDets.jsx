@@ -39,14 +39,19 @@ function CoinDets(props) {
                                     <Grid container>
                                         <Grid item md={5} sx={{ display: 'flex', flexDirection: 'column' }}>
                                             <Typography variant='p' sx={{ margin: '0px', color: '#F1F1F1', fontFamily: 'Poppins', fontWeight: 'bolder', padding: '0px', fontSize: { sm: '15px', xs: '18px' } }}>Total Supply</Typography>
-                                            <Typography variant='p' sx={{ margin: '0px', color: '#838383', fontFamily: 'Poppins', fontSize: { md: '12px', sm: '10px', xs: '10px' }, padding: '0px' }}>{millify(data.market_data.total_supply)}</Typography>
+                                            {/* <Typography variant='p' sx={{ margin: '0px', color: '#838383', fontFamily: 'Poppins', fontSize: { md: '12px', sm: '10px', xs: '10px' }, padding: '0px' }}>{data.market_data.total_suppl?.millify(data.market_data.total_supply)}</Typography> */}
+                                            {
+                                                data.market_data.total_supply ? <Typography variant='p' sx={{ margin: '0px', color: '#838383', fontFamily: 'Poppins', fontSize: { md: '12px', sm: '10px', xs: '10px' }, padding: '0px' }}>{millify(data.market_data.total_supply)}</Typography> : ''
+                                            }
                                         </Grid>
                                         <Grid item md={2} sx={{ padding: '2%', display: 'flex', justifyContent: 'center', }}>
                                             <Divider orientation='vertical' />
                                         </Grid>
                                         <Grid item md={5} sx={{ display: 'flex', flexDirection: 'column', justifyContent: 'center' }}>
                                             <Typography variant='p' sx={{ margin: '0px', color: '#F1F1F1', fontFamily: 'Poppins', fontWeight: 'bolder', padding: '0px', fontSize: { sm: '15px', xs: '18px' } }}>Circulating Supply</Typography>
-                                            <Typography variant='p' sx={{ margin: '0px', color: '#838383', fontFamily: 'Poppins', fontSize: { md: '12px', sm: '10px', xs: '10px' }, padding: '0px' }}>{millify(data.market_data.circulating_supply)}</Typography>
+                                            {
+                                                data.market_data.circulating_supply ? <Typography variant='p' sx={{ margin: '0px', color: '#838383', fontFamily: 'Poppins', fontSize: { md: '12px', sm: '10px', xs: '10px' }, padding: '0px' }}>{millify(data.market_data.circulating_supply)}</Typography> : ''
+                                            }
                                         </Grid>
                                     </Grid>
                                 </CardContent>
@@ -54,10 +59,18 @@ function CoinDets(props) {
                         </Grid>
                         <Card sx={{ backgroundColor: '#222430', borderRadius: '10px', width: '100%' }}>
                             <CardContent>
-                                <p style={{ margin: '0', padding: '0', fontSize: '12px', color: '#F1F1F1' }}>Sentiment Votes Down Percentage [{data.sentiment_votes_down_percentage}%]</p>
-                                <BorderLinearProgress variant="determinate" value={data.sentiment_votes_down_percentage} />
-                                <p style={{ margin: '0', marginTop: '8%', padding: '0', fontSize: '12px', color: '#F1F1F1' }}>Sentiment Votes Up Percentage [{data.sentiment_votes_up_percentage}%]</p>
-                                <BorderLinearProgress variant="determinate" value={data.sentiment_votes_up_percentage} />
+                                <p style={{ margin: '0', padding: '0', fontSize: '12px', color: '#F1F1F1' }}>Sentiment Votes Down Percentage{
+                                    data.sentiment_votes_down_percentage ? <>[{data.sentiment_votes_down_percentage}%]</> : ''
+                                } </p>
+                                {
+                                    data.sentiment_votes_down_percentage ? <BorderLinearProgress variant="determinate" value={data.sentiment_votes_down_percentage} /> : ''
+                                }
+                                <p style={{ margin: '0', padding: '0', fontSize: '12px', color: '#F1F1F1' }}>Sentiment Votes Up Percentage{
+                                    data.sentiment_votes_up_percentage ? <>[{data.sentiment_votes_up_percentage}%]</> : ''
+                                } </p>
+                                {
+                                    data.sentiment_votes_up_percentage ? <BorderLinearProgress variant="determinate" value={data.sentiment_votes_up_percentage} /> : ''
+                                }
                             </CardContent>
                         </Card>
                         <Grid container spacing={2} sx={{ marginTop: '5%' }}>
@@ -65,7 +78,7 @@ function CoinDets(props) {
                                 <Card sx={{ backgroundColor: '#222430', borderRadius: '10px', height: '100%' }}>
                                     <CardContent>
                                         <p style={{ margin: '0', padding: '0', color: '#A7A7A7', fontSize: '13px' }}>Coingecko Score</p>
-                                        <h5 style={{ margin: '0', padding: '0', color: '#F1F1F1' }}>{data.coingecko_score}</h5>
+                                        <h5 style={{ margin: '0', padding: '0', color: '#F1F1F1' }}>{data.coingecko_score ? data.coingecko_score : ''}</h5>
                                     </CardContent>
                                 </Card>
                             </Grid>
@@ -73,7 +86,7 @@ function CoinDets(props) {
                                 <Card sx={{ backgroundColor: '#222430', borderRadius: '10px', height: '100%' }}>
                                     <CardContent>
                                         <p style={{ margin: '0', padding: '0', color: '#A7A7A7', fontSize: '13px' }}>Developer Score</p>
-                                        <h5 style={{ margin: '0', padding: '0', color: '#F1F1F1' }}>{data.developer_score}</h5>
+                                        <h5 style={{ margin: '0', padding: '0', color: '#F1F1F1' }}>{data.developer_score ? data.developer_score : ''}</h5>
                                     </CardContent>
                                 </Card>
                             </Grid>
@@ -81,7 +94,7 @@ function CoinDets(props) {
                                 <Card sx={{ backgroundColor: '#222430', borderRadius: '10px', height: '100%' }}>
                                     <CardContent>
                                         <p style={{ margin: '0', padding: '0', color: '#A7A7A7', fontSize: '13px' }}>Community Score</p>
-                                        <h5 style={{ margin: '0', padding: '0', color: '#F1F1F1' }}>{data.community_score}</h5>
+                                        <h5 style={{ margin: '0', padding: '0', color: '#F1F1F1' }}>{data.community_score ? data.community_score : ''}</h5>
                                     </CardContent>
                                 </Card>
                             </Grid>
@@ -89,7 +102,7 @@ function CoinDets(props) {
                                 <Card sx={{ backgroundColor: '#222430', borderRadius: '10px', height: '100%' }}>
                                     <CardContent>
                                         <p style={{ margin: '0', padding: '0', color: '#A7A7A7', fontSize: '13px' }}>Liquidity Score</p>
-                                        <h5 style={{ margin: '0', padding: '0', color: '#F1F1F1' }}>{data.liquidity_score}</h5>
+                                        <h5 style={{ margin: '0', padding: '0', color: '#F1F1F1' }}>{data.liquidity_score ? data.liquidity_score : ''}</h5>
                                     </CardContent>
                                 </Card>
                             </Grid>
@@ -99,8 +112,8 @@ function CoinDets(props) {
                                 <Card sx={{ backgroundColor: '#222430', height: '100%', borderRadius: '10px', fontSize: '12px', display: 'flex', justifyContent: 'center', alignItems: 'center' }}>
                                     <CardContent sx={{ padding: '20px 0' }}>
                                         <CircularProgressbar
-                                            value={data.market_data.market_cap_change_percentage_24h}
-                                            text={`${data.market_data.market_cap_change_percentage_24h}%`}
+                                            value={data.market_data.market_cap_change_percentage_24h ? data.market_data.market_cap_change_percentage_24h : ''}
+                                            text={`${data.market_data.market_cap_change_percentage_24h ? data.market_data.market_cap_change_percentage_24h : ''}%`}
                                             strokeWidth={7}
                                         />
                                         <p style={{ margin: '0', marginTop: '10px', padding: '0', color: '#A7A7A7', fontSize: '13px' }}>Market Cap Change Percentage</p>
@@ -112,8 +125,8 @@ function CoinDets(props) {
                                 <Card sx={{ backgroundColor: '#222430', height: '100%', padding: '0', borderRadius: '10px', fontSize: '12px', display: 'flex', justifyContent: 'center', alignItems: 'center' }}>
                                     <CardContent sx={{ padding: '20px 0' }}>
                                         <CircularProgressbar
-                                            value={data.market_data.price_change_percentage_24h}
-                                            text={`${data.market_data.price_change_percentage_24h}%`}
+                                            value={data.market_data.price_change_percentage_24h ? data.market_data.price_change_percentage_24h : ''}
+                                            text={`${data.market_data.price_change_percentage_24h ? data.market_data.price_change_percentage_24h : ''}%`}
                                             strokeWidth={7}
                                         />
                                         <p style={{ margin: '0', marginTop: '10px', padding: '0', color: '#A7A7A7', fontSize: '13px' }}>Price Change Percentage</p>
@@ -128,7 +141,7 @@ function CoinDets(props) {
                         <Card sx={{ backgroundColor: '#222430', height: '100%', borderRadius: '10px' }}>
                             <CardContent>
                                 <h3 style={{ margin: '0', padding: '0', color: '#F1F1F1' }}>Description</h3>
-                                <p style={{ margin: '0', padding: '0', color: '#A7A7A7', fontSize: '13px' }}>{data.description.en}</p>
+                                <p style={{ margin: '0', padding: '0', color: '#A7A7A7', fontSize: '13px' }}>{data.description.en ? data.description.en : ''}</p>
                             </CardContent>
                         </Card>
                     </Grid>
