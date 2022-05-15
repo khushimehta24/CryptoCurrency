@@ -24,7 +24,7 @@ function BroadDrawer() {
                     </ListItemIcon>
                     <ListItemText
                         sx={{ textDecoration: 'none!important' }}
-                        primary="Posts"
+                        primary="Dashboard"
                     />
                 </ListItem>
             </List>
