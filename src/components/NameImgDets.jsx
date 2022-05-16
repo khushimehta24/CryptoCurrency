@@ -31,7 +31,7 @@ function NameImgDets(props) {
                         <Grid item md={8} sm={8} xs={8} container sx={{ display: 'flex', width: '100%', justifyContent: 'flex-end' }}>
                             <Grid item md={12} sx={{ display: 'flex', justifyContent: 'flex-end' }}>
                                 <Chip
-                                    sx={{ color: '#F1F1F1', backgroundColor: '#222430' }}
+                                    sx={{ color: '#F1F1F1', backgroundColor: '#222430', fontSize: { md: '15px', xs: '10px' } }}
                                     avatar={<Avatar alt="Natacha" src="https://www.pngitem.com/pimgs/m/304-3046712_award-gold-golden-badge-prize-honor-ribbon-hd.png" />}
                                     label={rank}
                                     deleteIcon={<DeleteIcon />}
