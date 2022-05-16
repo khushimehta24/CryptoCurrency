@@ -21,11 +21,11 @@ function NameImgDets(props) {
                 data ?
                     <Grid container sx={{ display: 'flex', alignItems: 'center', width: '100%', marginBottom: '2%' }}>
                         <Grid item md={4} sm={4} xs={4} container sx={{ display: 'flex', alignItems: 'center' }}>
-                            <Grid item sx={{ backgroundColor: '#222430', marginRight: '1%', borderRadius: '50%', padding: '10px', width: '50px', height: '50px', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
-                                <img src={data.image.thumb} />
+                            <Grid item sx={{ backgroundColor: '#222430', marginRight: '1%', borderRadius: '50%', padding: '10px', width: '40px', height: '40px', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
+                                <img src={data.image.thumb} style={{ borderRadius: '50%' }} />
                             </Grid>
                             <Grid item>
-                                <h3 style={{ fontFamily: 'Poppins', textTransform: 'capitalize', color: '#F1F1F1' }}>{data.name}</h3>
+                                <h4 style={{ fontFamily: 'Poppins', textTransform: 'capitalize', color: '#F1F1F1' }}>{data.name}</h4>
                             </Grid>
                         </Grid>
                         <Grid item md={8} sm={8} xs={8} container sx={{ display: 'flex', width: '100%', justifyContent: 'flex-end' }}>
