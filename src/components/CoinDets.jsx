@@ -65,7 +65,7 @@ function CoinDets(props) {
                                 {
                                     data.sentiment_votes_down_percentage ? <BorderLinearProgress variant="determinate" value={data.sentiment_votes_down_percentage} /> : ''
                                 }
-                                <p style={{ margin: '0', padding: '0', fontSize: '12px', color: '#F1F1F1' }}>Sentiment Votes Up Percentage{
+                                <p style={{ margin: '0', padding: '0', fontSize: '12px', color: '#F1F1F1', marginTop: '5%' }}>Sentiment Votes Up Percentage{
                                     data.sentiment_votes_up_percentage ? <>[{data.sentiment_votes_up_percentage}%]</> : ''
                                 } </p>
                                 {
